@@ -2,7 +2,7 @@ package com.example.hormone.security.handler;
 
 
 import com.alibaba.fastjson.JSON;
-import com.example.hormone.config.R;
+import com.example.hormone.VO.Result;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
@@ -18,7 +18,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
     public void handle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AccessDeniedException e) throws IOException, ServletException {
         httpServletResponse.setCharacterEncoding("UTF-8");
         httpServletResponse.setContentType("application/json; charset=utf-8");
-        R<String> result = new R<>();
+        Result<String> result = new Result<>();
         result.setCode(0);
         result.setMsg("权限不足");
         httpServletResponse.getWriter().write(JSON.toJSONString(result));

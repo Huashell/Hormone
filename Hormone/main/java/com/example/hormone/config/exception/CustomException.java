@@ -1,4 +1,4 @@
-package com.example.hormone.config;
+package com.example.hormone.config.exception;
 
 import java.io.Serial;
 

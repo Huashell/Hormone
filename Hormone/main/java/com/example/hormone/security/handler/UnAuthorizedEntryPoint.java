@@ -2,7 +2,7 @@ package com.example.hormone.security.handler;
 
 import com.alibaba.fastjson.JSON;
 
-import com.example.hormone.config.R;
+import com.example.hormone.VO.Result;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -17,7 +17,7 @@ public class UnAuthorizedEntryPoint implements AuthenticationEntryPoint {
 
     @Override
     public void commence(HttpServletRequest request , HttpServletResponse response , AuthenticationException authException) throws IOException, ServletException {
-        R<String> result = new R<>();
+        Result<String> result = new Result<>();
         result.setCode(0);
         result.setMsg("用户未登录");
         response.setCharacterEncoding("UTF-8");
